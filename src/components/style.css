@@ -1,0 +1,291 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.book-card {
+    width: 250px;
+    height: 420px;
+    background: #fff;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    justify-content: space-between; 
+}
+
+/* Hover Effect: Slight Lift */
+.book-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*  Image Covers Full Area & Adds a Gradient */
+.book-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    position: relative;
+}
+
+/*Gradient Overlay on Image for Better Readability */
+.book-card:hover .book-cover {
+    filter: brightness(0.85);
+}
+
+/*  Book Details Section */
+.book-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; 
+    justify-content: space-between; 
+}
+
+/* Title Styling */
+.book-title {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+/*  Author Styling */
+.book-author {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+/*  Description with Fixed Size */
+.book-description {
+    font-size: 0.85em;
+    color: #444;
+    line-height: 1.4;
+    height: 60px; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    transition: all 0.3s ease-in-out;
+}
+
+/*  Button is Now Fixed at the Bottom */
+.view-more {
+    padding: 8px;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s ease-in-out;
+    margin-top: auto; 
+}
+
+.view-more:hover {
+    background: linear-gradient(to right, #ff512f, #dd2476);
+}
+
+/*  BookList Grid */
+.bookList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.category-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 8px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: transform 0.2s ease-in-out, background 0.3s ease-in-out;
+  }
+  
+  .category-card:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+  }
+  
+  /*  Popular Books */
+  .book-item {
+    padding: 10px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .book-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .book-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .book-item:hover a {
+    color: #ff5722;
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-in-out;
+  }
+
+/* Search Bar Styling */
+.search {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .search-input {
+    width: 250px;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .search-btn {
+    background-color: #ff7e5f;
+    color: white;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .search-btn:hover {
+    background-color: #ff512f;
+  }
+  
+  /* Book List Styling */
+  .bookList-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .no-results {
+    font-size: 1.2rem;
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+ 
+.add-book-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+
+  /* Category Filter Styling */
+.category-filter {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.category-btn {
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #f5f5f5;
+  color: #333;
+  transition: all 0.3s ease-in-out;
+}
+
+.category-btn:hover {
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: white;
+}
+
+.category-btn.active {
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  color: white;
+  border: 2px solid #ff512f;
+}
+
