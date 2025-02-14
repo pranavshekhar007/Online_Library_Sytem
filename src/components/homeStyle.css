@@ -1,6 +1,7 @@
 /* Home Component Specific Styles */
 .home * {
   box-sizing: border-box;
+  padding: 6px;
 }
 
 .home .home__title {
@@ -11,23 +12,23 @@
 
 .home .home__description {
   font-size: 1.1rem;
-  color: #f3f4f6;
+  color: #c7c8c8;
 }
 
 .home .home__category-title {
   font-size: 2.5rem;
-  color: white;
+  color: #c7c8c8;
   margin-bottom: 20px;
   text-align: center;
 }
 
 .home .home__category-card {
-  background: #fff;
+  background: white;
   border-radius: 12px;
   padding: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,4 +129,83 @@
 
 .home .animate-fade-in {
   animation: fade-in 1s ease-in-out;
+}
+
+
+/* Responsive Styles for Small Screens */
+@media (max-width: 640px) {
+  /* General Adjustments */
+  .home {
+    padding: 16px;
+  }
+
+  /* Title and Description */
+  .home .home__title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .home .home__description {
+    font-size: 0.9rem;
+    margin-top: 10px;
+  }
+
+  /* Category Section */
+  .home .home__categories {
+    width: 100%;
+  }
+
+  .home .category-links {
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow wrapping to next line */
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .home .home__category-card {
+    width: 45%;  /* Two cards per row */
+    min-width: 120px;
+    height: 50px;
+    padding: 10px;
+    font-size: 0.85rem;
+  }
+
+  /* Popular Books Section */
+  .home .home__popular-books-title {
+    font-size: 2rem;
+  }
+
+  .home .popular-books-list {
+    flex-direction: row;
+    flex-wrap: wrap;  /* Allow wrapping */
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .home .book-card {
+    width: 45%;  /* Two cards per row */
+    min-width: 150px;
+  }
+
+  .home .book-cover {
+    height: 200px;
+  }
+
+  .home .book-details {
+    padding: 10px;
+  }
+
+  .home .book-title {
+    font-size: 1rem;
+  }
+
+  .home .book-author {
+    font-size: 0.85rem;
+  }
+
+  /* View More Button */
+  .home .view-more {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
 }
